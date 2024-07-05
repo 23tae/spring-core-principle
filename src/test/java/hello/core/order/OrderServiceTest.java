@@ -4,7 +4,7 @@ import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
@@ -19,7 +19,6 @@ public class OrderServiceTest {
         memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertEquals(order.getDiscountPrice(), 1000);
-        Assertions.assertEquals(1000, order.getDiscountPrice());
+        Assertions.assertThat(1000).isEqualTo(order.getDiscountPrice());
     }
 }
