@@ -31,6 +31,8 @@ public class SingletonTest {
         SingletonService singletonService2 = SingletonService.getInstance();
 
         Assertions.assertThat(singletonService1).isSameAs(singletonService2);
+
+        singletonService1.logic();
     }
 
     @Test
